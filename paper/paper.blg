@@ -4,6 +4,131 @@ The top-level auxiliary file: paper.aux
 The style file: acm.bst
 I found no \citation commands---while reading file paper.aux
 Database file #1: bibliography.bib
+You're missing a field name---line 2 of file bibliography.bib
+ : 
+ : % author = {Kim, K. H. and Colmenares, Juan A. and Rim, Kee-Wook},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 19 of file bibliography.bib
+ : 
+ : %  author = {Liu, R. and Klues, K. and Bird, S. and Hofmeyr{\dag}, S. and Asanovi\'{c}, K. and Kubiatowicz, J.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 34 of file bibliography.bib
+ : 
+ : %author =    {Juan A. Colmenares and Sarah Bird and Henry Cook and Paul Pearce and David Zhu and John Shalf and Steven Hofmeyr and Krste Asanovi\'c and John Kubiatowicz},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 43 of file bibliography.bib
+ : 
+ : %author =    {Shuo Tang and Haohui Mai and Samuel T. King},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 52 of file bibliography.bib
+ : 
+ : % title = {Qt for Embedded Linux},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 59 of file bibliography.bib
+ : 
+ : %title = {SunSpider Javascript Benchmark},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 66 of file bibliography.bib
+ : 
+ : %title = {Kraken JavaScript Benchmark},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 73 of file bibliography.bib
+ : 
+ : %title = {V8 Benchmark Suite v6},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 80 of file bibliography.bib
+ : 
+ : % title = {Cpuset},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 87 of file bibliography.bib
+ : 
+ : %  author    = {Ting Yang and
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 102 of file bibliography.bib
+ : 
+ : % author = {Jones, Michael B. and Barrera,III, Joseph S. and Forin, Alessandro and Leach, Paul J. and Ro\c{s}u, Daniela and Ro\c{s}u, Marcel-Catalin},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 117 of file bibliography.bib
+ : 
+ : %    author = {Ian Leslie and Derek McAuley and Richard Black and Timothy Roscoe and Paul Barham and David Evers and Robin Fairbairns and Eoin Hyden},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 123 of file bibliography.bib
+ : 
+ : % author = {Yoo, Jeong-Ki and Lee, Bum-Joo and Kim, Jong-Hwan},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 142 of file bibliography.bib
+ : 
+ : %    author = {Kenji Kaneko and Fumio Kanehiro and Shuuji Kajita and Hirohisa Hirukawa and Toshikazu Kawasaki and Masaru Hirata and Kazuhiko Akachi and Takakatsu Isozumi},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 150 of file bibliography.bib
+ : 
+ : %  title = {An Analysis of Linux Scalability to Many Cores},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 162 of file bibliography.bib
+ : 
+ : %  title = {Linux multi-core scalability},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 170 of file bibliography.bib
+ : 
+ : %  author = "Shinpei Kato and Ragunathan Rajkumar and Yutaka Ishikawa",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 178 of file bibliography.bib
+ : 
+ : % author = {Wentzlaff, David and Agarwal, Anant},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 197 of file bibliography.bib
+ : 
+ : % author = {Boyd-Wickizer, Silas and Chen, Haibo and Chen, Rong and Mao, Yandong and Kaashoek, Frans and Morris, Robert and Pesterev, Aleksey and Stein, Lex and Wu, Ming and Dai, Yuehua and Zhang, Yang and Zhang, Zheng},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 212 of file bibliography.bib
+ : 
+ : %    author = {Adrian Schüpbach and Simon Peter and Andrew Baumann and Timothy Roscoe and Paul Barham and Tim Harris and Rebecca Isaacs},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 219 of file bibliography.bib
+ : 
+ : %  author = {Pan, Heidi and Hindman, Benjamin and Asanovi\'{c}, Krste},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 238 of file bibliography.bib
+ : 
+ : %  author = {Pan, Heidi and Hindman, Benjamin and Asanovi\'{c}, Krste},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 256 of file bibliography.bib
+ : 
+ : %  author = {Engler, D. R. and Kaashoek, M. F. and O'Toole,Jr., J.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 273 of file bibliography.bib
+ : 
+ : %  author = {Engler, D. R. and Kaashoek, M. F. and O'Toole,Jr., J.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 291 of file bibliography.bib
+ : 
+ : %  author = {Lauer, Hugh C. and Needham, Roger M.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 You've used 0 entries,
             2253 wiz_defined-function locations,
             527 strings with 3881 characters,
@@ -45,4 +170,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 2
-(There was 1 error message)
+(There were 26 error messages)

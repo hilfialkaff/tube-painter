@@ -3,3 +3,12 @@ Maze:
 that challenges gamers on how swift and fluent their fingers are, tube blower challenges gamers to play games using a tube that they will control with their mouth. One of the games that we are
 implementing is a maze type game. In this game, the user will be presented with a series of randomly auto-generated maze in which the user is required to traverse by directing the tube correctly.
 Competitive elements could be easily introduced to the game by having multiple users play against each other.
+
+Painting:
+- The tube blower will send signals to the arduino. The signal will be processed by arduino and then the arduino will display the output to the difuser and projector screen in the class room. we choose projector screen because it will be bigger than laptop screen and intuitively, it will look like a canvas. 
+
+The user can create a splash of ink in the canvas(projector) as he/she blow the tube in an instant, it can also create a spraying ink if the user keep a constant pressure while blowing the tube. We will create a drawing cursor that will be controlled by the IMU(3-axis accelerometer and 2-axis gyroscope) for the user to help him/her aim when using the tube (work like a mouse and a cursor in a computer).
+
+The user will need to rotate the tube to change the color output. The difuser will act as a visual feedback to the user to determine the color that are going to be used. We can put the difuser beside the projector screen or on the tube so the user will notice its presence as a part of the system.
+
+As the user painting with the tube, he/she will intuitively see the visual feedback(color change) from the difuser and the drawing cursor as he/she move the tube, this will make the user realize that he/she can change the ink color by rotating the tube.
