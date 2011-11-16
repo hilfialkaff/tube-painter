@@ -1,6 +1,9 @@
-latex paper
-bibtex paper
-latex paper
-latex paper
-dvips paper.dvi
-ps2pdf paper.ps
+DOC=paper
+latex $DOC
+bibtex $DOC
+latex $DOC
+latex $DOC
+dvips $DOC.dvi
+ps2pdf $DOC.ps
+
+rm -rf *.aux *.bbl *.log *.blg *.lot *.lof *.ps *.dvi
