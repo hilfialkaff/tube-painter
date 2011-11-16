@@ -3,6 +3,7 @@
  *
  * mouseX -> x reading from accelerometer
  * mouseY -> y reading from accelerometer
+ * 'mousePressed' -> breathing into the tube
  * ___ -> z reading from accelerometer
  * 'a' -> rotating the tube clockwise
  * 'd' -> rotating the tube counterclockwise
@@ -15,6 +16,7 @@ final static int HEIGHT = 10, WIDTH = 10;
 final static int MAX_COLORS = 255 * 255 * 255;
 
 static int colors = 0; 
+static int angle = 0;
 
 void setup()
 {
@@ -24,10 +26,26 @@ void setup()
 
 void draw()
 {
-    ellipse(mouseX, mouseY, WIDTH, HEIGHT);
+    if (mousePressed == true) {
+        splash();
+    }
 }
 
-void change_color(int rotation)
+void splash()
+{
+    angle += 10;
+    float val = cos(radians(angle)) * 6.0;
+
+    for (int a = 0; a < 360; a += 75) {
+        float xoff = cos(radians(a)) * val;
+        float yoff = sin(radians(a)) * val;
+        ellipse(mouseX + xoff, mouseY + yoff, val, val);
+    }
+
+    ellipse(mouseX, mouseY, 2, 2);
+}
+
+void set_color(int rotation)
 {
     int r, g, b;
 
@@ -53,8 +71,8 @@ void keyPressed()
 {
     switch (key) {
         case ('a'):
-            change_color(100);
+            set_color(100);
         case ('d'):
-            change_color(-100);
+            set_color(-100);
     } 
 }
