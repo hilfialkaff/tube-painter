@@ -18,6 +18,20 @@ void splash(float x, float y)
     canvas.endDraw();
 }
 
+void paint_brush()
+{
+    if(mousePressed){
+        zPosition += (50.0f - zPosition) / 10.0f;
+    }
+    else {
+        zPosition += (-50.0f - zPosition) / 10.0f;
+    }
+
+    brush.moveTo(mouseX, mouseY, zPosition);
+    brush.animate();
+    brush.paint();
+}
+
 void shake_color()
 {
     int r, g, b;
@@ -31,25 +45,24 @@ void shake_color()
     canvas.fill(r, g, b);
 }
 
-//void set_color(int rotation)
-//{
-//    int r, g, b;
-//
-//    if ((colors + rotation) < 0 && (colors + rotation) > MAX_COLORS) {
-//        return;
-//    }
-//
-//    colors += rotation;
-//
-//    r = colors & 0xFF;
-//    g = (colors >> 8) & 0xFF;
-//    b = (colors >> 16) & 0xFF;
-//
-//    if (DEBUG) {
-//        print("r: " + r + " g: " +  g + " b: " + b);
-//        println();
-//    }
-//
-//    fill(r, g, b);
-//}
+void set_color(int rotation)
+{
+    int r, g, b;
 
+    if ((colors + rotation) < 0 && (colors + rotation) > MAX_COLORS) {
+        return;
+    }
+
+    colors += rotation;
+
+    r = colors & 0xFF;
+    g = (colors >> 8) & 0xFF;
+    b = (colors >> 16) & 0xFF;
+
+    if (DEBUG) {
+        print("r: " + r + " g: " +  g + " b: " + b);
+        println();
+    }
+
+    fill(r, g, b);
+}

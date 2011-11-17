@@ -11,42 +11,62 @@
  */
 
 final static boolean DEBUG = false;
+final static boolean SPLASHING = false; // Change from using a brush to using a splashing effect
 
 final static int CANVAS_HEIGHT = 500, CANVAS_WIDTH = 500;
 final static int HEIGHT = 10, WIDTH = 10;
+
+Alchemy alchemy;
+Brush brush;
+float zPosition = 0.0f;
 
 void setup()
 {
     size(CANVAS_WIDTH, CANVAS_HEIGHT);
     background(255, 255, 255);
 
-    canvas = createGraphics(CANVAS_WIDTH, CANVAS_HEIGHT, JAVA2D);
-    canvas.beginDraw();
-    canvas.smooth();
-    canvas.colorMode(HSB, 360, 100, 100);
-    canvas.fill(0, 0, 0);
-    canvas.noStroke();
-    canvas.endDraw();
+    if (SPLASHING) {
+        canvas = createGraphics(CANVAS_WIDTH, CANVAS_HEIGHT, JAVA2D);
+        canvas.beginDraw();
+        canvas.smooth();
+        canvas.colorMode(HSB, 360, 100, 100);
+        canvas.fill(0, 0, 0);
+        canvas.noStroke();
+        canvas.endDraw();
+    } else {
+        alchemy = new Alchemy(this);
+        brush = alchemy.brush();
+
+        brush.setHardness(25.0f);
+    }
 }
 
 void draw()
 {
-    image(canvas, 0, 0);
+    if (SPLASHING) {
+        image(canvas, 0, 0);
+    } else {
+        paint_brush();
+    }
 }
 
 void mousePressed()
 {
-    splash(mouseX, mouseY);
+    if (SPLASHING) {
+        splash(mouseX, mouseY);
+    }
 }
 
 void keyPressed()
 {
-    switch (key) {
-        //case ('a'):
-        //    set_color(100);
-        //case ('d'):
-        //    set_color(-100);
-        case ('s'):
-            shake_color();
-    } 
+    if (SPLASHING) {
+        switch (key) {
+            case ('a'):
+                set_color(100);
+            case ('d'):
+                set_color(-100);
+            case ('s'):
+                shake_color();
+        }
+    }
 }
