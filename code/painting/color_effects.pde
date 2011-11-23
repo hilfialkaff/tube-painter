@@ -20,14 +20,15 @@ void splash(float x, float y)
 
 void paint_brush()
 {
-    if(mousePressed){
+    // if(mousePressed){
+    if (fsr > 10) {
         zPosition += (50.0f - zPosition) / 10.0f;
     }
     else {
         zPosition += (-50.0f - zPosition) / 10.0f;
     }
 
-    brush.moveTo(mouseX, mouseY, zPosition);
+    brush.moveTo(calibrate_x(), calibrate_y(), (float)fsr);
     brush.animate();
     brush.paint();
 }
