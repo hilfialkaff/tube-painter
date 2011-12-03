@@ -1,13 +1,5 @@
 import processing.serial.*;
 
-
-// port needed
-//String portname = "COM7"; // or "COM5"
-//Serial port;
-
-
-
-
 final static int CANVAS_WIDTH = 1200;
 final static int CANVAS_HEIGHT = 600;
 int numBalls = 50;
@@ -16,81 +8,45 @@ float friction = -0.0;
 Ball[] balls = new Ball[numBalls];
 int xpos = 0, ypos = 0;
 char keypress;
+int count = 0;
 int score = 0;
-
-Boolean bool[] = new Boolean[50];
-
+int angle = 0;
+PFont fontA;
+Boolean bool[] = new Boolean[numBalls];
 
 void setup() 
-{
-  //port = new Serial(this, portname, 9600);
+{  
   __setup(this);
-  
+
+  //for score  
+  fontA = loadFont("CourierNew36.vlw");
+  textFont(fontA, 32);  
   
   size(CANVAS_WIDTH, CANVAS_HEIGHT);
   noStroke();
   smooth();  
+  
+  // ball for stage 1
   for (int b = 0; b < 50; b++){
     bool[b] = true;
     balls[b] = new Ball(random(width), 20, random(30, 50), 1, balls);
-  }  
+  }    
 }
 
-void draw_pointer()
-{
-    float w = 10, h = 10;
-    float xpos = 0, ypos = 0;
-    
-    xpos = calibrate_x();
-    ypos = calibrate_y();
-    
-  fill(0);
-  ellipse((float)xpos, (float)ypos, w, h);
-}
-
-void popBalloon()
-{
-    float xpos = calibrate_x();
-    float ypos = calibrate_y();
-    
-    for(int z = 0; z<50; z++){
-      float rx = balls[z].x + 50;
-      float lx = balls[z].x - 50;
-      float uy = balls[z].y + 50;
-      float ly = balls[z].y - 50;
-    
-      if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)) {
-        bool[z] = false;
-      }  
-    }
-}
-
-int count = 0;
 void draw() 
 {
+  // needed for all stages
   background(255);
-    
-    while(port.available() > 0) {
-      serialEvent(port.read());
-    }
-    
-    if (fsr > 10) {
-      popBalloon();
-    }
-    
-  for (int b = 0; b<50; b++)
-  {
-    if(count>=b*100 && bool[b] == true)
-    {
-      balls[b].move();
-      balls[b].display();
-    }    
-  }
-  
   draw_pointer();
+  displayScore();
+    
+  while(port.available() > 0) {
+    serialEvent(port.read());
+  }
+    
+  //stage 1
+  firstStage();
   
-  count++;    
-  for (int z = 0; z < 50; z++) if (balls[z].y >=(CANVAS_HEIGHT - 100)) bool[z] = false;
 }
 
 class Ball {
@@ -109,7 +65,9 @@ class Ball {
     diameter = din;
     id = idin;
     others = oin;
+    
     colors = int(random(0,3));
+   
   } 
   
   void move() {
@@ -147,31 +105,133 @@ class Ball {
       case 2:
         fill(0, 0, 255);
         ballcol = 'b';
+        break;     
+      case 3:
+        fill(0, 0, 0);
+        ballcol = 'l';
         break;        
     }    
     ellipse(x, y, diameter, diameter);
   }
 }
 
+void firstStage()
+{
+  if (fsr > 10) {
+    popBalloon();
+  }
+    
+  for (int b = 0; b<50; b++)
+  {
+    if(count>=b*100 && bool[b] == true)
+    {
+      balls[b].move();
+      balls[b].display();
+    }    
+  }
+  
+  count++;    
+  for (int z = 0; z < 50; z++) if (balls[z].y >=(CANVAS_HEIGHT - 100)) bool[z] = false;   
+  
+}
+
+void popBalloon()
+{
+    float xpos = calibrate_x();
+    float ypos = calibrate_y();
+    
+    createExplosion();
+    
+    for(int z = 0; z<150; z++){
+      float rx = balls[z].x + 50;
+      float lx = balls[z].x - 50;
+      float uy = balls[z].y + 50;
+      float ly = balls[z].y - 50;
+    
+      if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly) && setCol()==balls[z].ballcol && bool[z] != false) {
+        bool[z] = false;     
+        score++;        
+      }  
+    }
+}
+
+void draw_pointer()
+{
+    float w = 10, h = 10;
+    float xpos = 0, ypos = 0;
+    
+    xpos = calibrate_x();
+    ypos = calibrate_y();    
+    
+    if (setCol() == 'r') fill(255, 0, 0);
+    else if(setCol() == 'g') fill(0, 255, 0);
+    else if(setCol() == 'b') fill(0, 0, 255);
+    ellipse((float)xpos, (float)ypos, w, h);
+}
+
+char setCol()
+{
+  char col = 'r';
+  
+  if (deg >= 0 && deg < 120) col = 'r';
+  else if (deg >= 120 && deg < 240) col = 'g';
+  else if (deg >= 240 && deg < 360) col = 'b';
+  
+  return col;
+    
+}
+
+void displayScore()
+{
+  fill(0);
+  text("Score: " + score, 1020, 30);  
+}
+
+void createExplosion()
+{
+  float xpos = calibrate_x();
+  float ypos = calibrate_y();
+  if (fsr >= 10) {
+    angle += 10;
+    float val = cos(radians(angle)) * 20.0;
+    for (int a = 0; a < 360; a += 75) {
+      float xoff = cos(radians(a)) * val;
+      float yoff = sin(radians(a)) * val;
+      if (setCol() == 'r') fill(255, 0, 0);
+      else if(setCol() == 'g') fill(0, 255, 0);
+      else if(setCol() == 'b') fill(0, 0, 255);
+      ellipse(xpos + xoff, ypos + yoff, val, val);
+    }
+    fill(255);
+    ellipse(xpos, ypos, 2, 2);
+  }
+  
+}
+
+/* for computer input
+ * 
+ */
 void mousePressed()
 {
+  
     xpos = mouseX;
     ypos = mouseY;
     
     for(int z = 0; z<50; z++){
-    float rx = balls[z].x + 50;
-    float lx = balls[z].x - 50;
-    float uy = balls[z].y + 50;
-    float ly = balls[z].y - 50;
+      float rx = balls[z].x + 50;
+      float lx = balls[z].x - 50;
+      float uy = balls[z].y + 50;
+      float ly = balls[z].y - 50;
     
-    if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&&keypress==balls[z].ballcol) {
-    bool[z] = false;
-    score++;}
+      if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&&keypress==balls[z].ballcol&& bool[z] != false) {
+        bool[z] = false;
+        score++;
+        createExplosion();
+    }
     println(score);
   }
+  
 }
-
-
 void keyPressed()
 {
     switch (key) {
