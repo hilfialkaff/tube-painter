@@ -22,6 +22,8 @@ float zPosition = 0.0f;
 
 void setup()
 {
+    __setup(this);
+    
     size(CANVAS_WIDTH, CANVAS_HEIGHT);
     background(255, 255, 255);
 
@@ -43,6 +45,10 @@ void setup()
 
 void draw()
 {
+    while(port.available() > 0) {
+      serialEvent(port.read());
+    }
+    
     if (SPLASHING) {
         image(canvas, 0, 0);
     } else {
@@ -53,7 +59,8 @@ void draw()
 void mousePressed()
 {
     if (SPLASHING) {
-        splash(mouseX, mouseY);
+        // splash(mouseX, mouseY);
+        splash(calibrate_x(), calibrate_y());
     }
 }
 
