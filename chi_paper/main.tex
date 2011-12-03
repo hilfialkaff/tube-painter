@@ -1,0 +1,78 @@
+\documentclass{chi2012}
+\usepackage{times}
+% \usepackage{url}
+\usepackage{graphics}
+\usepackage{color}
+\usepackage[pdftex]{hyperref}
+\usepackage{xspace}
+\hypersetup{%
+pdftitle={Tangible Tube},
+pdfauthor={Hilfi Alkaff, Albert Tjoeng, Victor Tjhia, Alyssa Tjong},
+pdfkeywords={your keywords},
+bookmarksnumbered,
+pdfstartview={FitH},
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black,
+breaklinks=true,
+}
+\newcommand{\comment}[1]{}
+\definecolor{Orange}{rgb}{1,0.5,0}
+\newcommand{\todo}[1]{\textsf{\textbf{\textcolor{Orange}{[[#1]]}}}}
+\newcommand{\tube}{\textsf{Tangible Tube}\xspace}
+
+\pagenumbering{arabic}  % Arabic page numbers for submission.  Remove this line to eliminate page numbers for the camera ready copy
+
+\begin{document}
+% To make various LaTeX processors do the right thing with page size.
+\special{papersize=8.5in,11in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
+
+% Use this command to override the default ACM copyright statement
+% (e.g. for preprints). Remove for camera ready copy.
+% \toappear{Submitted for review to CHI 2012.}
+
+\title{Tangible Tube}
+\numberofauthors{3}
+\author{
+  \alignauthor Hilfi Alkaff\\
+    \affaddr{UC Berkeley}\\
+    \email{hilfia@eecs.berkeley.edu}
+  \alignauthor Albert Tjoeng\\
+    \affaddr{UC Berkeley}\\
+    \email{albert\_tjoeng@berkeley.edu}
+  \alignauthor Victor Tjhia\\
+    \affaddr{UC Berkeley}\\
+    \email{victor.tjhia@berkeley.edu}
+}
+
+\maketitle
+
+\input{abstract}
+
+\keywords{put author keywords here}
+
+\category{H.5.2}{Information Interfaces and Presentation}{Miscellaneous}[Optional sub-category]
+
+\terms{
+  See list of the limited ACM 16 terms in the instructions, see http://www.sheridanprinting.com/sigchi/generalterms.htm.
+}
+
+% \input{intro}
+% \input{rel-work}
+\input{impl}
+% \input{eval}
+% \input{conc}
+% \input{fut-work}
+% \input{ack}
+
+\bibliographystyle{acm-sigchi}
+\bibliography{main}
+
+\end{document}
+
