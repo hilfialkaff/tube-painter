@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+<target name="javadoc">
+<javadoc Locale="en_US" access="public" author="true" classpath="core.jar:noc.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.5" sourcefiles="src/mxa21/alchemy/Pigment.java" sourcepath="src" splitindex="true" use="true" version="true"/>
+</target>
+</project>
