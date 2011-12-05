@@ -20,15 +20,20 @@ void splash(float x, float y)
 
 void paint_brush()
 {
-    // if(mousePressed){
-    if (fsr > 10) {
+    if (mousePressed || (fsr > 10)) {
         zPosition += (50.0f - zPosition) / 10.0f;
     }
     else {
         zPosition += (-50.0f - zPosition) / 10.0f;
     }
 
-    brush.moveTo(calibrate_x(), calibrate_y(), (float)fsr);
+    set_color();
+    
+    if (USE_TUBE == 1) {
+      brush.moveTo(calibrate_x(), calibrate_y(), zPosition);
+    } else {
+      brush.moveTo(mouseX, mouseY, zPosition);
+    }
     brush.animate();
     brush.paint();
 }
@@ -46,24 +51,33 @@ void shake_color()
     canvas.fill(r, g, b);
 }
 
-void set_color(int rotation)
+double predeg;
+final static float THRESHOLE = 0.5;
+
+void set_color()
 {
     int r, g, b;
+    Pigment pigment;   
+    int colors = (int)(deg * pow(256, 3) / 360);
 
-    if ((colors + rotation) < 0 && (colors + rotation) > MAX_COLORS) {
-        return;
+    if (abs((float)(deg - predeg)) < THRESHOLE) {
+      return;
     }
-
-    colors += rotation;
-
+    
     r = colors & 0xFF;
     g = (colors >> 8) & 0xFF;
     b = (colors >> 16) & 0xFF;
 
+    pigment = new Pigment(r, g, b, 0);
+    
     if (DEBUG) {
-        print("r: " + r + " g: " +  g + " b: " + b);
+        print("colors: " + colors + "deg: " + deg + "r: " + r + " g: " +  g + " b: " + b);
         println();
     }
 
-    fill(r, g, b);
+    for(int i = 0;i < 20;i++) {
+      brush.setPiecePigment(i, pigment);
+    }
+    
+    predeg = deg;
 }
