@@ -44,7 +44,11 @@ void draw_pointer()
     xpos = calibrate_x();
     ypos = calibrate_y();
     
-  fill(0);
+  
+  if (deg >= 0 && deg < 90) fill(0);
+  else if (deg >= 90 && deg < 180) fill(255, 0, 0);
+  else if (deg >= 180 && deg < 270) fill(0, 255, 0);
+  else if (deg >= 270 && deg < 360) fill(0, 0, 255);
   ellipse((float)xpos, (float)ypos, w, h);
 }
 
@@ -153,6 +157,9 @@ class Ball {
   }
 }
 
+
+
+// unused
 void mousePressed()
 {
     xpos = mouseX;
