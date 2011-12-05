@@ -54,7 +54,7 @@ void draw()
     count = 0;
     for (int b = 0; b < numBalls; b++){
       bool[b] = true;
-      balls[b] = new Ball(random(width), 20, random(30, 50), 1, balls);    
+      balls[b] = new Ball(random(width), 20, random(50, 80), 1, balls);    
     }
     
   }
@@ -178,22 +178,27 @@ void popBalloon()
     
     createExplosion();
     
-    for(int z = 0; z<150; z++){
-      float rx = balls[z].x + 50;
-      float lx = balls[z].x - 50;
-      float uy = balls[z].y + 50;
-      float ly = balls[z].y - 50;
+    for(int z = 0; z<50; z++){
+      float rx = balls[z].x + 70;
+      float lx = balls[z].x - 70;
+      float uy = balls[z].y + 70;
+      float ly = balls[z].y - 70;
     
       if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly) && setCol()==balls[z].ballcol && bool[z] != false) {
         bool[z] = false;     
         score++;        
       }  
+      
+      if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&& balls[z].ballcol == 'l' && bool[z] != false){
+        bool[z] = false;
+        score--;
+      }
     }
 }
 
 void draw_pointer()
 {
-    float w = 10, h = 10;
+    float w = 20, h = 20;
     float xpos = 0, ypos = 0;
     
     xpos = calibrate_x();
