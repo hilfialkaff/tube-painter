@@ -12,7 +12,11 @@ int count = 0;
 int score = 0;
 int angle = 0;
 PFont fontA;
-Boolean bool[] = new Boolean[numBalls];
+Boolean bool[] = new Boolean[150];
+int stage = 1;
+Boolean stageone = true;
+Boolean stagetwo = false;
+Boolean stagethree = false;
 
 void setup() 
 {  
@@ -24,13 +28,9 @@ void setup()
   
   size(CANVAS_WIDTH, CANVAS_HEIGHT);
   noStroke();
-  smooth();  
-  
-  // ball for stage 1
-  for (int b = 0; b < 50; b++){
-    bool[b] = true;
-    balls[b] = new Ball(random(width), 20, random(30, 50), 1, balls);
-  }    
+  smooth();   
+ 
+ 
 }
 
 void draw() 
@@ -39,13 +39,37 @@ void draw()
   background(255);
   draw_pointer();
   displayScore();
+  
+  if (stageone == true) {    
+     // ball for stage 1     
+    for (int b = 0; b < numBalls; b++){
+      bool[b] = true;
+      balls[b] = new Ball(random(width), 20, random(30, 50), 1, balls);    
+    }
+    stageone = false;
+  }
+  
+  if (score >= 5 && stagetwo == false) {
+    stagetwo = true;
+    count = 0;
+    for (int b = 0; b < numBalls; b++){
+      bool[b] = true;
+      balls[b] = new Ball(random(width), 20, random(30, 50), 1, balls);    
+    }
+    
+  }
+  
+  
     
   while(port.available() > 0) {
     serialEvent(port.read());
   }
     
   //stage 1
-  firstStage();
+  
+      firstStage();
+      
+  
   
 }
 
@@ -66,7 +90,8 @@ class Ball {
     id = idin;
     others = oin;
     
-    colors = int(random(0,3));
+    if (stagetwo == false) colors = int(random(0,3));
+    else if (stagetwo == true) colors = int(random(0,4));
    
   } 
   
@@ -121,7 +146,7 @@ void firstStage()
     popBalloon();
   }
     
-  for (int b = 0; b<50; b++)
+  for (int b = 0; b<numBalls; b++)
   {
     if(count>=b*100 && bool[b] == true)
     {
@@ -131,9 +156,20 @@ void firstStage()
   }
   
   count++;    
-  for (int z = 0; z < 50; z++) if (balls[z].y >=(CANVAS_HEIGHT - 100)) bool[z] = false;   
+  for (int z = 0; z < numBalls; z++) if (balls[z].y >=(CANVAS_HEIGHT - 100)) bool[z] = false;   
   
 }
+
+
+void secondStage()
+{
+  for (int i = 0; i < numBalls; i++) balls[i].x = 20;  
+  
+}
+
+
+
+
 
 void popBalloon()
 {
@@ -227,8 +263,14 @@ void mousePressed()
         bool[z] = false;
         score++;
         createExplosion();
-    }
-    println(score);
+      }
+      println(score);
+      
+      if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&& balls[z].ballcol == 'l' && bool[z] != false){
+        bool[z] = false;
+        score--;
+      }
+      
   }
   
 }

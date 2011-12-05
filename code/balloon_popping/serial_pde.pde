@@ -44,12 +44,12 @@ void serialEvent(int serial) {
       yAcc = Double.parseDouble(tokens[1]);
       fsr = Double.parseDouble(tokens[2]);
       deg = Double.parseDouble(tokens[3]);
-      zr = Double.parseDouble(tokens[4]);
+      //zr = Double.parseDouble(tokens[4]);
       print(xAcc);
       print(yAcc);
       print(fsr);
       print(deg);
-      print(zr);
+      //print(zr);
     }
       
     serialData = "";
