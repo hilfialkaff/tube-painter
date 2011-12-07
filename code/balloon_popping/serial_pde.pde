@@ -36,7 +36,7 @@ void serialEvent(int serial) {
   }
 
   else {
-    println(serialData);
+    //println(serialData);
     String delims = "\t";
     String[] tokens = serialData.split(delims); 
     if (tokens.length == TOKEN_LENGTH){
@@ -45,10 +45,10 @@ void serialEvent(int serial) {
       fsr = Double.parseDouble(tokens[2]);
       deg = Double.parseDouble(tokens[3]);
       //zr = Double.parseDouble(tokens[4]);
-      print(xAcc);
-      print(yAcc);
-      print(fsr);
-      print(deg);
+//      print(xAcc);
+//      print(yAcc);
+//      print(fsr);
+//      print(deg);
       //print(zr);
     }
       

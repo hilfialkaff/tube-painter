@@ -1,26 +1,41 @@
 import processing.serial.*;
+import ddf.minim.*;
 
-final int CANVAS_WIDTH = 1200;
+AudioPlayer player;
+Minim minim;
+
+
+final int CANVAS_WIDTH = 1000;
 final int CANVAS_HEIGHT = screen.height - 100;
-int numBalls = 10;
-float gravity = 0.01;
+int numBalls = 5;
+float gravity = 0.005;
 float friction = -0.0;
 Ball[] balls = new Ball[numBalls];
 int xpos = 0, ypos = 0;
-char keypress;
+char keypress = 'l';
 int count = 0;
 int score = 0;
 int angle = 0;
 PFont fontA;
-Boolean bool[] = new Boolean[150];
+Boolean bool[] = new Boolean[numBalls];
 int stage = 1;
 Boolean stageone = true;
 Boolean stagetwo = false;
 Boolean stagethree = false;
+PrintWriter output = createWriter("data/data.txt");
+String[] scoreRecord = new String[1];
+String[] lines;
+int highestScore = 0;
 
 void setup() 
 {  
   __setup(this);
+  // read score
+  lines = loadStrings("scores.txt");
+  highestScore = Integer.parseInt(lines[0]);
+
+  // save score
+  //PrintWriter output = createWriter("data/data.txt");
 
   //for score  
   fontA = loadFont("CourierNew36.vlw");
@@ -33,7 +48,18 @@ void setup()
  
 }
 
-final static int DISPLAY_TIME = 100;
+final static int DISPLAY_TIME = 300;
+
+void soundCall(int blow)
+{
+  //audio
+  minim = new Minim(this);
+  if(blow == 0) player = minim.loadFile("baloonPopping.mp3");
+  player.play(); 
+  delay(1000);  
+  player.close();
+  minim.stop();
+}
 
 void displayInstruction()
 {
@@ -83,6 +109,7 @@ void draw()
       
   displayInstruction();
   checkGameState();
+  endGame();
 }
 
 class Ball {
@@ -166,11 +193,75 @@ void checkGameState()
   
   textAlign(CENTER);
   text("Game Over", CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+  textAlign(CENTER);
+  text("Blow hard to restart", CANVAS_WIDTH / 2, CANVAS_HEIGHT - 50);
+  //int tempCount = count;
+  printToFile();
+  if (fsr > 30) restart_game();
 }
+
+
+
+void restart_game()
+{
+  println("HERE");
+  stageone = true;
+  stagetwo = false;
+  score = 0;
+  count = 0;  
+  // read score
+  lines = loadStrings("scores.txt");
+  highestScore = Integer.parseInt(lines[0]);
+}
+
+int onceEndGame = 1;
+int onceEndGameCount = -1;
+
+void endGame()
+{
+  if (score < 5) return;
+  
+  if (stageone == true || stagetwo == false) {
+    return;
+  }
+  
+  for (int z = 0; z < numBalls; z++) {
+    if(bool[z] == true) {
+      return;
+    }
+  }
+  textAlign(CENTER);
+  text("Congratulations! Your score: " + score, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+  textAlign(CENTER);
+  text("Blow hard to restart", CANVAS_WIDTH / 2, CANVAS_HEIGHT - 50);
+
+  if (onceEndGame == 1) {
+    onceEndGameCount = count;
+  }
+  onceEndGame &= ~onceEndGame;
+  
+  printToFile();
+  if (count > (onceEndGameCount + 50) && fsr > 30) restart_game();
+  
+}
+
+void printToFile()
+{
+  //println("hello");
+  lines = loadStrings("scores.txt");
+  println(lines);
+  scoreRecord[0] = Integer.toString(score);
+  if(score > highestScore) saveStrings("scores.txt", scoreRecord);
+//  output.print("score");
+//  output.flush();  // Actually writes the bytes to the file
+  //output.close();  // Close the file
+}
+
+
 
 void firstStage()
 {
-  if (fsr > 10) {
+  if (fsr > 10) {   
     popBalloon();
   }
     
@@ -215,12 +306,16 @@ void popBalloon()
       if (score >= 5) {
         if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly) && setCol()==balls[z].ballcol && bool[z] != false) {
           bool[z] = false;     
-          score++;        
+          score++;   
+          ThreadThing tt = new ThreadThing(this);
+          tt.start();     
         }
       } else {
         if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&& balls[z].ballcol == 'l' && bool[z] != false){
           bool[z] = false;
           score++;
+          ThreadThing tt = new ThreadThing(this);
+          tt.start();
         }
       }
     }
@@ -262,7 +357,8 @@ void displayScore()
   if (score < 5) text("Stage 1", 500, 30);
   else if (score >= 5) text("Stage 2", 500, 30);
   fill(200, 100, 50);
-  text("Score: " + score, 1020, 30);  
+  text("Score: " + score, 820, 30);
+  text("Top Score: " + highestScore, 820, 50);    
 }
 
 void createExplosion()
@@ -271,13 +367,18 @@ void createExplosion()
   float ypos = calibrate_y();
   if (fsr >= 10) {
     angle += 10;
-    float val = cos(radians(angle)) * (float)fsr/2;
+    float val = cos(radians(angle)) * (float)fsr;
     for (int a = 0; a < 360; a += 75) {
       float xoff = cos(radians(a)) * val;
       float yoff = sin(radians(a)) * val;
-      if (setCol() == 'r') fill(255, 0, 0);
-      else if(setCol() == 'g') fill(0, 255, 0);
-      else if(setCol() == 'b') fill(0, 0, 255);
+      
+      if (score >= 5) {
+        if (setCol() == 'r') fill(255, 0, 0);
+        else if(setCol() == 'g') fill(0, 255, 0);
+        else if(setCol() == 'b') fill(0, 0, 255);
+      }
+      else fill(0);  
+      
       ellipse(xpos + xoff, ypos + yoff, val, val);
     }
     fill(255);
@@ -285,6 +386,8 @@ void createExplosion()
   }
   
 }
+
+
 
 /* for computer input
  * 
@@ -302,18 +405,24 @@ void mousePressed()
       float ly = balls[z].y - 50;
     
       if (score >= 5) {
-        if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly) && setCol()==balls[z].ballcol && bool[z] != false) {
+        if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly) && keypress==balls[z].ballcol && bool[z] != false) {
           bool[z] = false;     
-          score++;        
+          score++;     
+          ThreadThing tt = new ThreadThing(this);
+          tt.start();
         }
       } else {
         if((xpos>=lx&&xpos<=rx)&&(ypos<=uy&&ypos>=ly)&& balls[z].ballcol == 'l' && bool[z] != false){
           bool[z] = false;
           score++;
+          ThreadThing tt = new ThreadThing(this);
+          tt.start();
         }
       }
       
   }
+  
+  
   
 }
 void keyPressed()
@@ -329,4 +438,37 @@ void keyPressed()
             keypress = 'b';
     } 
 }
+
+
+
+// multi thread our sound effect
+public class ThreadThing implements Runnable {
+  Thread thread;
+
+  public ThreadThing(PApplet parent) {
+    parent.registerDispose(this);
+  }
+
+  public void start() {
+    thread = new Thread(this);
+    thread.start();
+  }
+
+  public void run() {
+    // do something threaded here
+    soundCall(0);
+  }
+
+  public void stop() {
+    thread = null;
+  }
+
+  // this will magically be called by the parent once the user hits stop
+  // this functionality hasn't been tested heavily so if it doesn't work, file a bug
+  public void dispose() {
+    stop();
+  }
+} 
+
+
 
