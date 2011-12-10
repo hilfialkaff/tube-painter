@@ -10,11 +10,12 @@
  * 's' -> shaking the tube
  */
 
-final static boolean DEBUG = false;
+final static boolean DEBUG = true;
 final static boolean SPLASHING = false; // Change from using a brush to using a splashing effect
 
-final static int CANVAS_HEIGHT = 500, CANVAS_WIDTH = 500;
+final int CANVAS_HEIGHT = screen.height - 50, CANVAS_WIDTH = screen.width;
 final static int HEIGHT = 10, WIDTH = 10;
+final static int USE_TUBE = 1;
 
 Alchemy alchemy;
 Brush brush;
@@ -66,14 +67,14 @@ void mousePressed()
 
 void keyPressed()
 {
-    if (SPLASHING) {
-        switch (key) {
-            case ('a'):
-                set_color(100);
-            case ('d'):
-                set_color(-100);
-            case ('s'):
-                shake_color();
-        }
-    }
+//    if (SPLASHING) {
+//        switch (key) {
+//            case ('a'):
+//                set_color(100);
+//            case ('d'):
+//                set_color(-100);
+//            case ('s'):
+//                shake_color();
+//        }
+//    }
 }
