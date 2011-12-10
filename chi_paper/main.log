@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 13:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -329,39 +329,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
  []
 
-(./abstract.tex) (./intro.tex) (./background.tex) (./impl.tex [1
+(./abstract.tex) (./intro.tex) (./background.tex [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<sample.jpg, id=51, 361.35pt x 274.02374pt>
-File: sample.jpg Graphic file (type jpg)
- <use sample.jpg>
-Package pdftex.def Info: sample.jpg used on input line 17.
-(pdftex.def)             Requested size: 243.91124pt x 184.9664pt.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./impl.tex
+<./figs/impl1.png, id=55, 670.00313pt x 434.37282pt>
+File: ./figs/impl1.png Graphic file (type png)
+ <use ./figs/impl1.png>
+Package pdftex.def Info: ./figs/impl1.png used on input line 7.
+(pdftex.def)             Requested size: 243.91124pt x 158.13051pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 18.
+(caption)                particular \caption on input line 8.
 See the caption package documentation for explanation.
 
-) (./eval.tex
+[2 <./figs/impl1.png>]) (./eval.tex
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 2.
 
-[2 <./sample.jpg>]) (./fut-work.tex) (./conc.tex) (./ack.tex) (./main.bbl
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
-
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[3])
+) (./fut-work.tex [3]) (./conc.tex) (./ack.tex) (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
  [4]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
@@ -373,24 +361,23 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 6421 strings out of 493633
- 96719 string characters out of 3148831
- 179174 words of memory out of 3000000
- 9623 multiletter control sequences out of 15000+200000
- 10850 words of font info for 33 fonts, out of 3000000 for 9000
+ 6409 strings out of 493633
+ 96595 string characters out of 3148831
+ 179304 words of memory out of 3000000
+ 9615 multiletter control sequences out of 15000+200000
+ 8860 words of font info for 26 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 43i,7n,42p,681b,454s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,7n,42p,764b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/fonts/t
-ype1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (4 pages, 136673 bytes).
+mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on main.pdf (4 pages, 1104219 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
+ 94 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  70 words of extra memory for PDF output out of 10000 (max. 10000000)
 
