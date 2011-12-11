@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 19:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  11 DEC 2011 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -336,26 +336,15 @@ Missing character: There is no ™ in font cmss10!
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./design.tex <./figs/ske
-tch.png, id=62, 295.1025pt x 195.73125pt>
-File: ./figs/sketch.png Graphic file (type png)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-<use ./figs/sketch.png>
-Package pdftex.def Info: ./figs/sketch.png used on input line 5.
-(pdftex.def)             Requested size: 195.12973pt x 129.42493pt.
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5.
 
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 6.
-See the caption package documentation for explanation.
-
-Missing character: There is no â in font cmss10!
-Missing character: There is no € in font cmss10!
-Missing character: There is no ™ in font cmss10!
-[2 <./figs/sketch.png>]) (./impl.tex
-<./figs/impl1.png, id=73, 670.00313pt x 434.37282pt>
+) (./impl.tex <./figs/impl1.png, id=63, 670.00313pt x 434.37282pt>
 File: ./figs/impl1.png Graphic file (type png)
- <use ./figs/impl1.png>
+
+<use ./figs/impl1.png>
 Package pdftex.def Info: ./figs/impl1.png used on input line 7.
 (pdftex.def)             Requested size: 243.91124pt x 158.13051pt.
 
@@ -364,40 +353,59 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 8.
 See the caption package documentation for explanation.
 
+[2] <./figs/sketch.png, id=75, 295.1025pt x 195.73125pt>
+File: ./figs/sketch.png Graphic file (type png)
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 15.
+<use ./figs/sketch.png>
+Package pdftex.def Info: ./figs/sketch.png used on input line 16.
+(pdftex.def)             Requested size: 195.12973pt x 129.42493pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 17.
+See the caption package documentation for explanation.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 15.
+(Font)              using `OT1/cmss/bx/n' instead on input line 23.
+
+<./figs/tube3.png, id=76, 965.10562pt x 531.48563pt>
+File: ./figs/tube3.png Graphic file (type png)
+ <use ./figs/tube3.png>
+Package pdftex.def Info: ./figs/tube3.png used on input line 29.
+(pdftex.def)             Requested size: 243.91124pt x 134.32272pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 30.
+See the caption package documentation for explanation.
 
 Missing character: There is no â in font cmss10!
 Missing character: There is no € in font cmss10!
 Missing character: There is no ™ in font cmss10!
-[3 <./figs/impl1.png>]
-<./figs/tubemaster.png, id=82, 763.35187pt x 1047.915pt>
+[3 <./figs/impl1.png> <./figs/sketch.png> <./figs/tube3.png>]
+<./figs/tubemaster.png, id=86, 763.35187pt x 1047.915pt>
 File: ./figs/tubemaster.png Graphic file (type png)
 
 <use ./figs/tubemaster.png>
-Package pdftex.def Info: ./figs/tubemaster.png used on input line 35.
-(pdftex.def)             Requested size: 195.12973pt x 267.86238pt.
+Package pdftex.def Info: ./figs/tubemaster.png used on input line 40.
+(pdftex.def)             Requested size: 170.73712pt x 234.37958pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 36.
+(caption)                particular \caption on input line 41.
 See the caption package documentation for explanation.
 
-) (./eval.tex [4 <./figs/tubemaster.png>]
-<./figs/impl2.png, id=93, 256.5585pt x 192.3185pt>
+) (./design.tex) (./eval.tex [4 <./figs/tubemaster.png>]
+<./figs/impl2.png, id=96, 256.5585pt x 192.3185pt>
 File: ./figs/impl2.png Graphic file (type png)
  <use ./figs/impl2.png>
-Package pdftex.def Info: ./figs/impl2.png used on input line 18.
+Package pdftex.def Info: ./figs/impl2.png used on input line 20.
 (pdftex.def)             Requested size: 243.91124pt x 182.8453pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 19.
+(caption)                particular \caption on input line 21.
 See the caption package documentation for explanation.
 
 ) (./fut-work.tex) (./conc.tex [5 <./figs/impl2.png>]) (./ack.tex) (./main.bbl)
@@ -412,7 +420,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8FBD8270C9E9CF5E6B202EB263A5B607;537.
+(rerunfilecheck)             Checksum: A2B978FF423F5EADFC4CF3E8EE605096;537.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -420,23 +428,23 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 6445 strings out of 493633
- 97166 string characters out of 3148831
- 178656 words of memory out of 3000000
- 9639 multiletter control sequences out of 15000+200000
+ 6452 strings out of 493633
+ 97280 string characters out of 3148831
+ 178752 words of memory out of 3000000
+ 9644 multiletter control sequences out of 15000+200000
  8860 words of font info for 26 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 43i,7n,42p,1334b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,7n,42p,894b,449s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (6 pages, 1937346 bytes).
+Output written on main.pdf (6 pages, 2596254 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
