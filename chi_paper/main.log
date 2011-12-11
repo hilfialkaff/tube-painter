@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 19:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -336,11 +336,11 @@ Missing character: There is no ™ in font cmss10!
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./impl.tex <./figs/impl1
-.png, id=59, 670.00313pt x 434.37282pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./design.tex) (./impl.te
+x
+<./figs/impl1.png, id=63, 670.00313pt x 434.37282pt>
 File: ./figs/impl1.png Graphic file (type png)
-
-<use ./figs/impl1.png>
+ <use ./figs/impl1.png>
 Package pdftex.def Info: ./figs/impl1.png used on input line 7.
 (pdftex.def)             Requested size: 243.91124pt x 158.13051pt.
 
@@ -358,7 +358,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 15.
 
-<./figs/tube3.png, id=69, 965.10562pt x 531.48563pt>
+<./figs/tube3.png, id=74, 965.10562pt x 531.48563pt>
 File: ./figs/tube3.png Graphic file (type png)
  <use ./figs/tube3.png>
 Package pdftex.def Info: ./figs/tube3.png used on input line 25.
@@ -372,7 +372,7 @@ See the caption package documentation for explanation.
 Missing character: There is no â in font cmss10!
 Missing character: There is no € in font cmss10!
 Missing character: There is no ™ in font cmss10!
-<./figs/tubemaster.png, id=71, 763.35187pt x 1047.915pt>
+<./figs/tubemaster.png, id=76, 763.35187pt x 1047.915pt>
 File: ./figs/tubemaster.png Graphic file (type png)
 
 <use ./figs/tubemaster.png>
@@ -385,7 +385,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [3 <./figs/impl1.png> <./figs/tube3.png>]) (./eval.tex
-<./figs/eval.png, id=81, 276.232pt x 1114.564pt>
+<./figs/eval.png, id=86, 276.232pt x 1114.564pt>
 File: ./figs/eval.png Graphic file (type png)
  <use ./figs/eval.png>
 Package pdftex.def Info: ./figs/eval.png used on input line 10.
@@ -394,7 +394,7 @@ Package pdftex.def Info: ./figs/eval.png used on input line 10.
 
 LaTeX Warning: Marginpar on page 4 moved.
 
-<./figs/impl2.png, id=82, 256.5585pt x 192.3185pt>
+<./figs/impl2.png, id=87, 256.5585pt x 192.3185pt>
 File: ./figs/impl2.png Graphic file (type png)
  <use ./figs/impl2.png>
 Package pdftex.def Info: ./figs/impl2.png used on input line 18.
@@ -407,30 +407,30 @@ See the caption package documentation for explanation.
 
 ) (./fut-work.tex [4 <./figs/tubemaster.png> <./figs/eval.png> <./figs/impl2.pn
 g>]) (./conc.tex) (./ack.tex) (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
 
 
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B99D368A4A018D145FADBA2359C5364C;493.
+(rerunfilecheck)             Checksum: 8FBD8270C9E9CF5E6B202EB263A5B607;537.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 6442 strings out of 493633
- 97168 string characters out of 3148831
- 179699 words of memory out of 3000000
- 9642 multiletter control sequences out of 15000+200000
+ 6449 strings out of 493633
+ 97243 string characters out of 3148831
+ 179729 words of memory out of 3000000
+ 9644 multiletter control sequences out of 15000+200000
  8860 words of font info for 26 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  43i,7n,42p,1334b,449s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -440,10 +440,10 @@ c/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (5 pages, 5271790 bytes).
+Output written on main.pdf (5 pages, 5271909 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
