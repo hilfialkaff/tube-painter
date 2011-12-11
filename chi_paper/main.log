@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 18:27
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2011.12.10)  10 DEC 2011 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,12 +385,33 @@ LaTeX Warning: Marginpar on page 3 moved.
 Missing character: There is no â in font cmss10!
 Missing character: There is no € in font cmss10!
 Missing character: There is no ™ in font cmss10!
-) (./eval.tex) (./fut-work.tex [3 <./figs/tube3.png> <./figs/tubemaster.png>])
-(./conc.tex) (./ack.tex) (./main.bbl)
+) (./eval.tex <./figs/impl2.png, id=78, 256.5585pt x 192.3185pt>
+File: ./figs/impl2.png Graphic file (type png)
+
+<use ./figs/impl2.png>
+Package pdftex.def Info: ./figs/impl2.png used on input line 8.
+(pdftex.def)             Requested size: 243.91124pt x 182.8453pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 9.
+See the caption package documentation for explanation.
+
+[3 <./figs/tube3.png> <./figs/tubemaster.png> <./figs/impl2.png>])
+(./fut-work.tex) (./conc.tex) (./ack.tex) (./main.bbl
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[4])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
- [4]
+
+Overfull \vbox (0.625pt too high) has occurred while \output is active []
+
+ [5]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
- (./main.aux)
+
+(./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -402,23 +423,23 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 6436 strings out of 493633
- 97049 string characters out of 3148831
- 182572 words of memory out of 3000000
- 9634 multiletter control sequences out of 15000+200000
+ 6444 strings out of 493633
+ 97166 string characters out of 3148831
+ 180711 words of memory out of 3000000
+ 9639 multiletter control sequences out of 15000+200000
  8860 words of font info for 26 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 43i,7n,42p,1262b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,7n,42p,1262b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (4 pages, 1923954 bytes).
+Output written on main.pdf (5 pages, 2484042 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
